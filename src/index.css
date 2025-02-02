@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-laptop: 870px;
+  --breakpoint-tablet: 500px;
+
+  --font-poppinsRegular: poppins-regular;
+  --font-poppinsBold: poppins-bold;
+  --font-robotoRegular: roboto-regular;
+  --font-robotoSemiBold: roboto-semibold;
+}
+@layer base {
+  h1 {
+    @apply laptop:text-5xl font-robotoRegular text-3xl;
+  }
+}

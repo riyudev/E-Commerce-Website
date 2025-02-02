@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "poppins-regular";
+  src:
+    local("Poppins-Regular"),
+    url("./fonts/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "poppins-bold";
+  src:
+    local("Poppins-Bold"),
+    url("./fonts/Poppins-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "roboto-regular";
+  src:
+    local("Roboto_SemiCondensed-Regular"),
+    url("./fonts/Roboto_SemiCondensed-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "roboto-semibold";
+  src:
+    local("Roboto_SemiCondensed-SemiBold"),
+    url("./fonts/Roboto_SemiCondensed-SemiBold.ttf") format("truetype");
+}
+
+html {
+  scroll-behavior: smooth;
+}
