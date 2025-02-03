@@ -5,13 +5,22 @@
   --breakpoint-laptop: 870px;
   --breakpoint-tablet: 500px;
 
-  --font-poppinsRegular: poppins-regular;
-  --font-poppinsBold: poppins-bold;
+  --font-quicksand: quicksand-medium;
   --font-robotoRegular: roboto-regular;
   --font-robotoSemiBold: roboto-semibold;
 }
 @layer base {
   h1 {
-    @apply laptop:text-5xl font-robotoRegular text-3xl;
+    @apply laptop:text-5xl font-robotoRegular text-5xl;
+  }
+
+  h2 {
+    @apply laptop:text-5xl font-robotoSemiBold text-3xl;
+  }
+
+  li,
+  button,
+  p {
+    @apply font-quicksand;
   }
 }

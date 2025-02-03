@@ -1,7 +1,7 @@
 @font-face {
-  font-family: "poppins-regular";
+  font-family: "quicksand-medium";
   src:
-    local("Poppins-Regular"),
+    local("Quicksand-Medium"),
     url("./fonts/Poppins-Regular.ttf") format("truetype");
 }
 
