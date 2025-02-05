@@ -1,18 +1,4 @@
 @font-face {
-  font-family: "quicksand-medium";
-  src:
-    local("Quicksand-Medium"),
-    url("./fonts/Poppins-Regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "poppins-bold";
-  src:
-    local("Poppins-Bold"),
-    url("./fonts/Poppins-Bold.ttf") format("truetype");
-}
-
-@font-face {
   font-family: "roboto-regular";
   src:
     local("Roboto_SemiCondensed-Regular"),
@@ -24,6 +10,27 @@
   src:
     local("Roboto_SemiCondensed-SemiBold"),
     url("./fonts/Roboto_SemiCondensed-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "roboto-bold";
+  src:
+    local("Roboto_SemiCondensed-SemiBold"),
+    url("./fonts/Roboto_SemiCondensed-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "sfpro-medium";
+  src:
+    local("SF-Pro-Rounded-Medium"),
+    url("./fonts/SF-Pro-Rounded-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "sfpro-semibold";
+  src:
+    local("SF-Pro-Rounded-SemiBold"),
+    url("./fonts/SF-Pro-Rounded-SemiBold.otf") format("opentype");
 }
 
 html {

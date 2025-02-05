@@ -5,22 +5,39 @@
   --breakpoint-laptop: 870px;
   --breakpoint-tablet: 500px;
 
-  --font-quicksand: quicksand-medium;
   --font-robotoRegular: roboto-regular;
   --font-robotoSemiBold: roboto-semibold;
+  --font-robotoBold: roboto-bold;
+  --font-sfproMedium: sfpro-medium;
+  --font-sfproSemiBold: sfpro-semibold;
 }
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-400, currentColor);
+  }
+}
+
 @layer base {
   h1 {
     @apply laptop:text-5xl font-robotoRegular text-5xl;
   }
 
   h2 {
-    @apply laptop:text-5xl font-robotoSemiBold text-3xl;
+    @apply laptop:text-4xl font-robotoSemiBold text-3xl;
+  }
+
+  h3 {
+    @apply laptop:text-3xl font-robotoSemiBold text-3xl;
   }
 
   li,
   button,
   p {
-    @apply font-quicksand;
+    @apply font-sfproMedium text-lg;
   }
 }
