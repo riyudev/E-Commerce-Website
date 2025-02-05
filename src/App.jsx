@@ -4,15 +4,28 @@ import Navbar from "./components/Navbar";
 import Shop from "./pages/Shop";
 import ShopCategory from "./pages/ShopCategory";
 import Product from "./pages/Product";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Cart from "./pages/Cart";
 import LoginSignup from "./pages/LoginSignup";
 
+function Layout({ children }) {
+  const location = useLocation();
+  const isLoginPage = location.pathname === '/login';
+
+  return (
+    <div className="min-h-screen">
+      {!isLoginPage && <Navbar />}
+      <main>
+        {children}
+      </main>
+    </div>
+  );
+}
+
 function App() {
   return (
-    <div className="">
-      <Router>
-        <Navbar />
+    <Router>
+      <Layout>
         <Routes>
           <Route path="/" element={<Shop />} />
           <Route path="/mens" element={<ShopCategory category="men" />} />
@@ -24,8 +37,8 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<LoginSignup />} />
         </Routes>
-      </Router>
-    </div>
+      </Layout>
+    </Router>
   );
 }
 

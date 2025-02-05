@@ -12,8 +12,8 @@ function Navbar() {
   ];
 
   return (
-    <nav className="w-full place-items-center border-b-2">
-      <div className="flex w-[90%] items-center justify-between p-8">
+    <nav className="fixed top-0 left-0 right-0 z-50 w-full bg-white border-b-2">
+      <div className="mx-auto flex w-[90%] items-center justify-between p-6">
         <div className="flex gap-x-2">
           <NavLink to="/" className="flex gap-x-2">
             <div className="max-w-12">
@@ -29,7 +29,9 @@ function Navbar() {
               key={link.path}
               to={link.path}
               className={({ isActive }) =>
-                isActive ? "text-amber-500 underline underline-offset-8" : "hover:text-amber-500"
+                isActive
+                  ? "text-amber-500 underline underline-offset-8"
+                  : "hover:text-amber-500"
               }
             >
               <li>{link.label}</li>
@@ -39,7 +41,9 @@ function Navbar() {
 
         <div className="flex items-center space-x-10">
           <NavLink to="/login">
-            <button className="rounded-full bg-amber-400 p-3 px-10 hover:bg-amber-500">Login</button>
+            <button className="rounded-full bg-amber-400 p-3 px-10 hover:bg-amber-500">
+              Login
+            </button>
           </NavLink>
           <NavLink to="/cart" className="relative cursor-pointer p-2">
             <MdOutlineShoppingCart className="mt-1 text-3xl hover:text-amber-500" />
