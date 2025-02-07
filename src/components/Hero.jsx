@@ -1,6 +1,6 @@
 import React from "react";
 import Hand from "../assets/wavehand.png";
-import Man from "../assets/fashion-men.png";
+import Banner from "../assets/shopbanner.png";
 
 function Hero() {
   return (
@@ -28,9 +28,9 @@ function Hero() {
           </div>
         </figure>
 
-        <div className="relative">
+        <div className="relative pt-10">
           <img
-            src={Man}
+            src={Banner}
             alt=""
             className="max-h-[550px] w-auto object-contain"
           />
