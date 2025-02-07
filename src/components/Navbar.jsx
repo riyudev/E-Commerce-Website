@@ -19,7 +19,7 @@ function Navbar() {
             <div className="max-w-12">
               <img src={Logo} alt="" />
             </div>
-            <h2 className="font-sfproSemiBold">SHOPEE</h2>
+            <h2 className="font-robotoBold">SHOPEE</h2>
           </NavLink>
         </div>
 
@@ -47,8 +47,8 @@ function Navbar() {
           </NavLink>
           <NavLink to="/cart" className="relative cursor-pointer p-2">
             <MdOutlineShoppingCart className="mt-1 text-3xl hover:text-amber-500" />
-            <p className="absolute top-0 ml-4 rounded-full bg-red-500/90 p-1 text-sm text-white">
-              10+
+            <p className="absolute top-0 ml-3 rounded-full bg-red-500/90 px-2 text-[12px] text-white">
+              9
             </p>
           </NavLink>
         </div>

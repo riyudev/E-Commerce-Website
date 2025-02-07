@@ -8,6 +8,7 @@
   --font-robotoRegular: roboto-regular;
   --font-robotoSemiBold: roboto-semibold;
   --font-robotoBold: roboto-bold;
+  --font-sfproRegular: sfpro-regular;
   --font-sfproMedium: sfpro-medium;
   --font-sfproSemiBold: sfpro-semibold;
 }
@@ -32,12 +33,20 @@
   }
 
   h3 {
-    @apply laptop:text-3xl font-robotoSemiBold text-3xl;
+    @apply laptop:text-3xl font-robotoSemiBold text-2xl;
+  }
+
+  h4 {
+    @apply laptop:text-2xl font-robotoSemiBold text-xl;
+  }
+
+  h5 {
+    @apply laptop:text-2xl font-sfproSemiBold;
   }
 
   li,
   button,
   p {
-    @apply font-sfproMedium text-lg;
+    @apply font-sfproRegular text-lg leading-6;
   }
 }

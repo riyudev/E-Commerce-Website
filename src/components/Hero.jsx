@@ -1,10 +1,10 @@
 import React from "react";
 import Hand from "../assets/wavehand.png";
-import Banner from "../assets/shopbanner.png";
+import Banner from "../assets/hero.png";
 
 function Hero() {
   return (
-    <div className="flex min-h-screen w-full justify-center bg-gradient-to-b from-pink-100 via-pink-50 to-white">
+    <div className="flex min-h-screen w-full justify-center bg-gradient-to-b from-pink-200 via-pink-100 to-white">
       <div className="flex w-[85%] items-center justify-between">
         <figure className="flex flex-col gap-y-8">
           <span className="font-sfproSemiBold text-lg tracking-wide">

@@ -20,6 +20,13 @@
 }
 
 @font-face {
+  font-family: "sfpro-regular";
+  src:
+    local("SF-Pro-Text-Regular"),
+    url("./fonts/SF-Pro-Text-Regular.otf") format("opentype");
+}
+
+@font-face {
   font-family: "sfpro-medium";
   src:
     local("SF-Pro-Rounded-Medium"),
