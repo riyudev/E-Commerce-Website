@@ -25,7 +25,7 @@
 
 @layer base {
   h1 {
-    @apply laptop:text-5xl font-robotoRegular text-5xl;
+    @apply laptop:text-7xl font-robotoSemiBold text-5xl;
   }
 
   h2 {
