@@ -1,15 +1,15 @@
 import React from "react";
-import dataProduct from "../assets/WomenData.js";
 import Item from "./Items";
+import newCollectionsData from "../assets/NewCollectionsData.js";
 
-const Popular = () => {
+function NewCollections() {
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center pt-20">
       <div className="w-[90%] place-items-center space-y-4">
-        <h2>POPULAR IN WOMEN</h2>
+        <h2>NEW COLLECTIONS</h2>
         <hr className="w-40 border-[3px] border-amber-400" />
-        <div className="flex space-x-5">
-          {dataProduct.map((item, i) => {
+        <div className="grid grid-cols-4 space-y-5 space-x-5">
+          {newCollectionsData.map((item, i) => {
             return (
               <Item
                 key={i}
@@ -25,6 +25,6 @@ const Popular = () => {
       </div>
     </div>
   );
-};
+}
 
-export default Popular;
+export default NewCollections;
