@@ -19,7 +19,7 @@ function Navbar() {
             <div className="max-w-12">
               <img src={Logo} alt="" />
             </div>
-            <h2 className="font-robotoBold">SHOPEE</h2>
+            <h3 className="font-robotoBold">SHOPEE</h3>
           </NavLink>
         </div>
 

@@ -6,9 +6,9 @@ function NewCollections() {
   return (
     <div className="flex items-center justify-center pt-20">
       <div className="w-[90%] place-items-center space-y-4">
-        <h2>NEW COLLECTIONS</h2>
+        <h3>NEW COLLECTIONS</h3>
         <hr className="w-40 border-[3px] border-amber-400" />
-        <div className="grid grid-cols-4 space-y-5 space-x-5">
+        <div className="grid grid-cols-4 space-y-5 space-x-6">
           {newCollectionsData.map((item, i) => {
             return (
               <Item

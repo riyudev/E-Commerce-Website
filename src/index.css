@@ -19,7 +19,7 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-400, currentColor);
+    border-color: var(--color-gray-300, currentColor);
   }
 }
 
@@ -29,11 +29,11 @@
   }
 
   h2 {
-    @apply laptop:text-4xl font-robotoSemiBold text-3xl;
+    @apply laptop:text-5xl font-robotoSemiBold text-4xl;
   }
 
   h3 {
-    @apply laptop:text-3xl font-robotoSemiBold text-2xl;
+    @apply laptop:text-4xl font-robotoSemiBold text-3xl;
   }
 
   h4 {

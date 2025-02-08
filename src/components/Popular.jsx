@@ -6,9 +6,9 @@ const Popular = () => {
   return (
     <div className="flex items-center justify-center">
       <div className="w-[90%] place-items-center space-y-4">
-        <h2>POPULAR IN WOMEN</h2>
+        <h3>POPULAR IN WOMEN</h3>
         <hr className="w-40 border-[3px] border-amber-400" />
-        <div className="flex space-x-5">
+        <div className="flex space-x-6">
           {dataProduct.map((item, i) => {
             return (
               <Item
