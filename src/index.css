@@ -46,6 +46,7 @@
 
   li,
   button,
+  input,
   p {
     @apply font-sfproRegular text-lg leading-6;
   }
