@@ -28,3 +28,5 @@ let allProduct = [
     oldPrice: 80,
   },
 ];
+
+export default allProduct;
