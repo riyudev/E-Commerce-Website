@@ -41,7 +41,7 @@
   }
 
   h5 {
-    @apply laptop:text-2xl font-sfproSemiBold;
+    @apply font-sfproSemiBold text-xl;
   }
 
   li,

@@ -1,23 +1,28 @@
 import React from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Shop from "./pages/Shop";
 import ShopCategory from "./pages/ShopCategory";
 import Product from "./pages/Product";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import Cart from "./pages/Cart";
 import LoginSignup from "./pages/LoginSignup";
 
 function Layout({ children }) {
   const location = useLocation();
-  const isLoginPage = location.pathname === '/login';
+  const isLoginPage = location.pathname === "/login";
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col">
       {!isLoginPage && <Navbar />}
-      <main>
-        {children}
-      </main>
+      <main className="flex-grow">{children}</main>
+      {!isLoginPage && <Footer />}
     </div>
   );
 }
