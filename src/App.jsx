@@ -5,21 +5,24 @@ import Footer from "./components/Footer";
 import Shop from "./pages/Shop";
 import ShopCategory from "./pages/ShopCategory";
 import Product from "./pages/Product";
+import Cart from "./pages/Cart";
+import LoginSignup from "./pages/LoginSignup";
+import MenBanner from "./assets/banner_men.png";
+import WomenBanner from "./assets/banner_women.png";
+import KidBanner from "./assets/banner_kid.png";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   useLocation,
 } from "react-router-dom";
-import Cart from "./pages/Cart";
-import LoginSignup from "./pages/LoginSignup";
 
 function Layout({ children }) {
   const location = useLocation();
   const isLoginPage = location.pathname === "/login";
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="flex min-h-screen flex-col">
       {!isLoginPage && <Navbar />}
       <main className="flex-grow">{children}</main>
       {!isLoginPage && <Footer />}
@@ -33,9 +36,18 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Shop />} />
-          <Route path="/mens" element={<ShopCategory category="men" />} />
-          <Route path="/womens" element={<ShopCategory category="women" />} />
-          <Route path="/kids" element={<ShopCategory category="kid" />} />
+          <Route
+            path="/mens"
+            element={<ShopCategory banner={MenBanner} category="men" />}
+          />
+          <Route
+            path="/womens"
+            element={<ShopCategory banner={WomenBanner} category="women" />}
+          />
+          <Route
+            path="/kids"
+            element={<ShopCategory banner={KidBanner} category="kid" />}
+          />
           <Route path="/product" element={<Product />}>
             <Route path=":productId" element={<Product />} />
           </Route>

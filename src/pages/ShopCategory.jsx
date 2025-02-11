@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ShopContext } from "../context/ShopContext";
 
-function ShopCategory() {
+const ShopCategory = (props) => {
   return (
-    <div>
-      <div></div>
+    <div className="place-items-center">
+      <div className="mt-24">
+        <img src={props.banner} alt="" />
+      </div>
     </div>
   );
-}
+};
 
 export default ShopCategory;
