@@ -38,7 +38,7 @@ import Kid12 from "./kid12.png";
 let allProduct = [
   {
     id: 1,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Men1",
     category: "men",
     image: Men1,
     newPrice: 50,
@@ -46,7 +46,7 @@ let allProduct = [
   },
   {
     id: 2,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Women1",
     category: "women",
     image: Women1,
     newPrice: 50,
@@ -54,7 +54,7 @@ let allProduct = [
   },
   {
     id: 3,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Kid1.",
     category: "kid",
     image: Kid1,
     newPrice: 50,
@@ -62,7 +62,7 @@ let allProduct = [
   },
   {
     id: 4,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Men2",
     category: "men",
     image: Men2,
     newPrice: 50,
@@ -70,7 +70,7 @@ let allProduct = [
   },
   {
     id: 5,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Women2",
     category: "women",
     image: Women2,
     newPrice: 50,
@@ -78,7 +78,7 @@ let allProduct = [
   },
   {
     id: 6,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Kid2",
     category: "kid",
     image: Kid2,
     newPrice: 50,
@@ -86,7 +86,7 @@ let allProduct = [
   },
   {
     id: 7,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Men3",
     category: "men",
     image: Men3,
     newPrice: 50,
@@ -94,7 +94,7 @@ let allProduct = [
   },
   {
     id: 8,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Women3",
     category: "women",
     image: Women3,
     newPrice: 50,
@@ -102,7 +102,7 @@ let allProduct = [
   },
   {
     id: 9,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Kid3",
     category: "kid",
     image: Kid3,
     newPrice: 50,
@@ -110,7 +110,7 @@ let allProduct = [
   },
   {
     id: 10,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Men4",
     category: "men",
     image: Men4,
     newPrice: 50,
@@ -118,7 +118,7 @@ let allProduct = [
   },
   {
     id: 11,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Women4",
     category: "women",
     image: Women4,
     newPrice: 50,
@@ -126,7 +126,7 @@ let allProduct = [
   },
   {
     id: 12,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Kid4",
     category: "kid",
     image: Kid4,
     newPrice: 50,
@@ -134,7 +134,7 @@ let allProduct = [
   },
   {
     id: 13,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Men5",
     category: "men",
     image: Men5,
     newPrice: 50,
@@ -142,7 +142,7 @@ let allProduct = [
   },
   {
     id: 14,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Women5",
     category: "women",
     image: Women5,
     newPrice: 50,
@@ -150,7 +150,7 @@ let allProduct = [
   },
   {
     id: 15,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Kid5",
     category: "kid",
     image: Kid5,
     newPrice: 50,
@@ -158,7 +158,7 @@ let allProduct = [
   },
   {
     id: 16,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Men6",
     category: "men",
     image: Men6,
     newPrice: 50,
@@ -166,7 +166,7 @@ let allProduct = [
   },
   {
     id: 17,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Women6",
     category: "women",
     image: Women6,
     newPrice: 50,
@@ -174,7 +174,7 @@ let allProduct = [
   },
   {
     id: 18,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Kid6",
     category: "kid",
     image: Kid6,
     newPrice: 50,
@@ -182,7 +182,7 @@ let allProduct = [
   },
   {
     id: 19,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Men7",
     category: "men",
     image: Men7,
     newPrice: 50,
@@ -190,7 +190,7 @@ let allProduct = [
   },
   {
     id: 20,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Women7",
     category: "women",
     image: Women7,
     newPrice: 50,
@@ -198,7 +198,7 @@ let allProduct = [
   },
   {
     id: 21,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Kid7",
     category: "kid",
     image: Kid7,
     newPrice: 50,
@@ -206,7 +206,7 @@ let allProduct = [
   },
   {
     id: 22,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Men8",
     category: "men",
     image: Men8,
     newPrice: 50,
@@ -214,7 +214,7 @@ let allProduct = [
   },
   {
     id: 23,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Women8",
     category: "women",
     image: Women8,
     newPrice: 50,
@@ -222,7 +222,7 @@ let allProduct = [
   },
   {
     id: 24,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Kid8",
     category: "kid",
     image: Kid8,
     newPrice: 50,
@@ -230,7 +230,7 @@ let allProduct = [
   },
   {
     id: 25,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Men9",
     category: "men",
     image: Men9,
     newPrice: 50,
@@ -238,7 +238,7 @@ let allProduct = [
   },
   {
     id: 26,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Women9",
     category: "women",
     image: Women9,
     newPrice: 50,
@@ -246,7 +246,7 @@ let allProduct = [
   },
   {
     id: 27,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Kid9",
     category: "kid",
     image: Kid9,
     newPrice: 50,
@@ -254,7 +254,7 @@ let allProduct = [
   },
   {
     id: 28,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Men10",
     category: "men",
     image: Men10,
     newPrice: 50,
@@ -262,7 +262,7 @@ let allProduct = [
   },
   {
     id: 29,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Women10",
     category: "women",
     image: Women10,
     newPrice: 50,
@@ -270,7 +270,7 @@ let allProduct = [
   },
   {
     id: 30,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Kid10",
     category: "kid",
     image: Kid10,
     newPrice: 50,
@@ -278,7 +278,7 @@ let allProduct = [
   },
   {
     id: 31,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Men11",
     category: "men",
     image: Men11,
     newPrice: 50,
@@ -286,7 +286,7 @@ let allProduct = [
   },
   {
     id: 32,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Women11",
     category: "women",
     image: Women11,
     newPrice: 50,
@@ -294,7 +294,7 @@ let allProduct = [
   },
   {
     id: 33,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Kid11",
     category: "kid",
     image: Kid11,
     newPrice: 50,
@@ -302,7 +302,7 @@ let allProduct = [
   },
   {
     id: 34,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Men12",
     category: "men",
     image: Men12,
     newPrice: 50,
@@ -310,7 +310,7 @@ let allProduct = [
   },
   {
     id: 35,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Women12",
     category: "women",
     image: Women12,
     newPrice: 50,
@@ -318,7 +318,7 @@ let allProduct = [
   },
   {
     id: 36,
-    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Kid12",
     category: "kid",
     image: Kid12,
     newPrice: 50,

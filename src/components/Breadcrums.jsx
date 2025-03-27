@@ -1,15 +1,15 @@
 import React from "react";
-import { FaArrowRight } from "react-icons/fa";
+import { IoIosArrowForward } from "react-icons/io";
 
-function Breadcrums() {
+const Breadcrums = (props) => {
   const { product } = props;
 
   return (
-    <div>
-      HOME <FaArrowRight /> SHOP <FaArrowRight /> {product.category}{" "}
-      <FaArrowRight /> {product.name}
+    <div className="mt-24 flex items-center">
+      HOME <IoIosArrowForward /> SHOP <IoIosArrowForward /> {product.category}{" "}
+      <IoIosArrowForward /> {product.name}
     </div>
   );
-}
+};
 
 export default Breadcrums;
