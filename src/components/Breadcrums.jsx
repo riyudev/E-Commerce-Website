@@ -5,7 +5,7 @@ const Breadcrums = (props) => {
   const { product } = props;
 
   return (
-    <div className="mt-24 flex items-center">
+    <div className="mt-24 flex items-center px-5">
       HOME <IoIosArrowForward /> SHOP <IoIosArrowForward /> {product.category}{" "}
       <IoIosArrowForward /> {product.name}
     </div>

@@ -10,7 +10,7 @@ function Product() {
   const product = allProduct.find((e) => e.id === Number(productId));
 
   return (
-    <div>
+    <div className="px-[5%]">
       <Breadcrums product={product} />
       <ProductDisplay product={product} />
     </div>
