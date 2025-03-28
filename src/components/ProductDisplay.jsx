@@ -5,15 +5,15 @@ const ProductDisplay = (props) => {
   const { product } = props;
   return (
     <div className="flex justify-center px-5">
-      <div className="grid grid-cols-2">
+      <div className="flex max-w-xl bg-slate-400">
         <div className="">
-          <img src={product.image} alt="" className="w-" />
+          <img src={product.image} alt="" className="" />
           <img src={product.image} alt="" className="w-" />
           <img src={product.image} alt="" className="w-" />
           <img src={product.image} alt="" className="w-" />
         </div>
-        <div className="">
-          <img src={product.image} alt="" />
+        <div className="w-xl">
+          <img src={product.image} alt="" className="" />
         </div>
       </div>
 

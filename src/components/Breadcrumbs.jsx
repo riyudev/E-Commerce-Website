@@ -1,7 +1,7 @@
 import React from "react";
 import { IoIosArrowForward } from "react-icons/io";
 
-const Breadcrums = (props) => {
+const Breadcrumbs = (props) => {
   const { product } = props;
 
   return (
@@ -12,4 +12,4 @@ const Breadcrums = (props) => {
   );
 };
 
-export default Breadcrums;
+export default Breadcrumbs;
