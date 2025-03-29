@@ -9,8 +9,8 @@ const Items = (props) => {
       </Link>
       <div className="px-2">
         <p>{props.name}</p>
-        <p className="line-through">${props.oldPrice}</p>
-        <h5>${props.newPrice}</h5>
+        <p className="text-black/50 line-through">${props.oldPrice}</p>
+        <h5 className="text-amber-500">${props.newPrice}</h5>
       </div>
     </div>
   );

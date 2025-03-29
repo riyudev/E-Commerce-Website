@@ -4,33 +4,35 @@ import { FaStar, FaRegStar, FaStarHalf } from "react-icons/fa";
 const ProductDisplay = (props) => {
   const { product } = props;
   return (
-    <div className="flex justify-center px-5">
-      <div className="flex max-w-xl bg-slate-400">
-        <div className="">
-          <img src={product.image} alt="" className="" />
-          <img src={product.image} alt="" className="w-" />
-          <img src={product.image} alt="" className="w-" />
-          <img src={product.image} alt="" className="w-" />
+    <div className="flex justify-center space-x-10 px-5">
+      <div className="flex size-fit gap-4">
+        <div className="flex flex-col justify-between">
+          <img src={product.image} alt="" className="w-[105px]" />
+          <img src={product.image} alt="" className="w-[105px]" />
+          <img src={product.image} alt="" className="w-[105px]" />
+          <img src={product.image} alt="" className="w-[105px]" />
         </div>
-        <div className="w-xl">
-          <img src={product.image} alt="" className="" />
+        <div className="w-fit">
+          <img src={product.image} alt="" className="w-3xl object-cover" />
         </div>
       </div>
 
-      <div>
-        <h4>{product.name}</h4>
-        <div>
+      <div className="space-y-5">
+        <h3>{product.name}</h3>
+        <div className="flex items-center space-x-1">
           <FaStar />
           <FaStar />
           <FaStar />
           <FaStar />
           <FaRegStar />
-          <p>(122)</p>
+          <p className="text-sm">(122)</p>
         </div>
 
         <div>
-          <p>${product.oldPrice}</p>
-          <p>${product.newPrice}</p>
+          <p className="text-black/50 line-through">${product.oldPrice}</p>
+          <h4 className="font-sfproSemiBold text-amber-500">
+            ${product.newPrice}
+          </h4>
         </div>
 
         <blockquote>
@@ -42,22 +44,25 @@ const ProductDisplay = (props) => {
           </p>
         </blockquote>
 
-        <div>
+        <div className="space-y-6">
           <h5>Select Size</h5>
-          <div>
-            <div>S</div>
-            <div>M</div>
-            <div>L</div>
-            <div>XL</div>
-            <div>XXL</div>
+          <div className="flex space-x-4">
+            <div className="border-2 p-2 px-4">S</div>
+            <div className="border-2 p-2 px-4">M</div>
+            <div className="border-2 p-2 px-4">L</div>
+            <div className="border-2 p-2 px-4">XL</div>
+            <div className="border-2 p-2 px-4">XXL</div>
           </div>
-          <button>ADD TO CART</button>
+          <button className="bg-amber-400 p-3.5 px-4.5 hover:bg-amber-500">
+            ADD TO CART
+          </button>
           <div>
-            <p>
-              <span>Category :</span> Women, T-Shirt, Crop Top
+            <p className="text-base">
+              <span className="font-sfproSemiBold">Category :</span> Women,
+              T-Shirt, Crop Top
             </p>
-            <p>
-              <span>Tags :</span> Modern, Latest
+            <p className="text-base">
+              <span className="font-sfproSemiBold">Tags :</span> Modern, Latest
             </p>
           </div>
         </div>
