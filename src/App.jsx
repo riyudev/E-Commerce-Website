@@ -16,6 +16,7 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
+import ScrollReset from "./helpers/ScrollReset";
 
 function Layout({ children }) {
   const location = useLocation();
@@ -33,6 +34,7 @@ function Layout({ children }) {
 function App() {
   return (
     <Router>
+      <ScrollReset />
       <Layout>
         <Routes>
           <Route path="/" element={<Shop />} />

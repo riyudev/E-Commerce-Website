@@ -9,14 +9,14 @@ import Kid3 from "./kid3.jpg";
 
 let newCollectionsData = [
   {
-    id: 1,
+    id: 2,
     name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: Women1,
     newPrice: 50,
     oldPrice: 80,
   },
   {
-    id: 2,
+    id: 1,
     name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: Men1,
     newPrice: 50,
@@ -30,14 +30,14 @@ let newCollectionsData = [
     oldPrice: 80,
   },
   {
-    id: 4,
+    id: 9,
     name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: Kid3,
     newPrice: 50,
     oldPrice: 80,
   },
   {
-    id: 5,
+    id: 4,
     name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: Men2,
     newPrice: 50,
@@ -58,7 +58,7 @@ let newCollectionsData = [
     oldPrice: 80,
   },
   {
-    id: 8,
+    id: 5,
     name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: Women2,
     newPrice: 50,

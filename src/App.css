@@ -39,7 +39,3 @@
     local("SF-Pro-Rounded-SemiBold"),
     url("./fonts/SF-Pro-Rounded-SemiBold.otf") format("opentype");
 }
-
-html {
-  scroll-behavior: smooth;
-}
