@@ -5,28 +5,28 @@ import Women4 from "./women4.jpg";
 
 let dataProduct = [
   {
-    id: 1,
+    id: 2,
     name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: Women1,
     newPrice: 50,
     oldPrice: 80,
   },
   {
-    id: 2,
+    id: 5,
     name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: Women2,
     newPrice: 50,
     oldPrice: 80,
   },
   {
-    id: 3,
+    id: 8,
     name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: Women3,
     newPrice: 50,
     oldPrice: 80,
   },
   {
-    id: 3,
+    id: 11,
     name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: Women4,
     newPrice: 50,
