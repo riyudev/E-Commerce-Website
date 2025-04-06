@@ -16,7 +16,7 @@ function Product() {
       <Breadcrumbs product={product} />
       <ProductDisplay product={product} />
       <Descriptionbox />
-      <RelatedProducts />
+      <RelatedProducts category={product.category} productId={productId} />
     </div>
   );
 }
