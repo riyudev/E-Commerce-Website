@@ -58,8 +58,8 @@ const ProductDisplay = (props) => {
           </button>
           <div>
             <p className="text-base">
-              <span className="font-sfproSemiBold">Category :</span> Women,
-              T-Shirt, Crop Top
+              <span className="font-sfproSemiBold">Category :</span>{" "}
+              {product.category}, T-Shirt, Crop Top
             </p>
             <p className="text-base">
               <span className="font-sfproSemiBold">Tags :</span> Modern, Latest

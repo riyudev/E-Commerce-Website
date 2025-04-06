@@ -39,7 +39,7 @@ let allProduct = [
   {
     id: 1,
     name: "Men1",
-    category: "men",
+    category: "Men",
     image: Men1,
     newPrice: 50,
     oldPrice: 80,
@@ -47,7 +47,7 @@ let allProduct = [
   {
     id: 2,
     name: "Women1",
-    category: "women",
+    category: "Women",
     image: Women1,
     newPrice: 50,
     oldPrice: 80,
@@ -55,7 +55,7 @@ let allProduct = [
   {
     id: 3,
     name: "Kid1.",
-    category: "kid",
+    category: "Kid",
     image: Kid1,
     newPrice: 50,
     oldPrice: 80,
@@ -63,7 +63,7 @@ let allProduct = [
   {
     id: 4,
     name: "Men2",
-    category: "men",
+    category: "Men",
     image: Men2,
     newPrice: 50,
     oldPrice: 80,
@@ -71,7 +71,7 @@ let allProduct = [
   {
     id: 5,
     name: "Women2",
-    category: "women",
+    category: "Women",
     image: Women2,
     newPrice: 50,
     oldPrice: 80,
@@ -79,7 +79,7 @@ let allProduct = [
   {
     id: 6,
     name: "Kid2",
-    category: "kid",
+    category: "Kid",
     image: Kid2,
     newPrice: 50,
     oldPrice: 80,
@@ -87,7 +87,7 @@ let allProduct = [
   {
     id: 7,
     name: "Men3",
-    category: "men",
+    category: "Men",
     image: Men3,
     newPrice: 50,
     oldPrice: 80,
@@ -95,7 +95,7 @@ let allProduct = [
   {
     id: 8,
     name: "Women3",
-    category: "women",
+    category: "Women",
     image: Women3,
     newPrice: 50,
     oldPrice: 80,
@@ -103,7 +103,7 @@ let allProduct = [
   {
     id: 9,
     name: "Kid3",
-    category: "kid",
+    category: "Kid",
     image: Kid3,
     newPrice: 50,
     oldPrice: 80,
@@ -111,7 +111,7 @@ let allProduct = [
   {
     id: 10,
     name: "Men4",
-    category: "men",
+    category: "Men",
     image: Men4,
     newPrice: 50,
     oldPrice: 80,
@@ -119,7 +119,7 @@ let allProduct = [
   {
     id: 11,
     name: "Women4",
-    category: "women",
+    category: "Women",
     image: Women4,
     newPrice: 50,
     oldPrice: 80,
@@ -127,7 +127,7 @@ let allProduct = [
   {
     id: 12,
     name: "Kid4",
-    category: "kid",
+    category: "Kid",
     image: Kid4,
     newPrice: 50,
     oldPrice: 80,
@@ -135,7 +135,7 @@ let allProduct = [
   {
     id: 13,
     name: "Men5",
-    category: "men",
+    category: "Men",
     image: Men5,
     newPrice: 50,
     oldPrice: 80,
@@ -143,7 +143,7 @@ let allProduct = [
   {
     id: 14,
     name: "Women5",
-    category: "women",
+    category: "Women",
     image: Women5,
     newPrice: 50,
     oldPrice: 80,
@@ -151,7 +151,7 @@ let allProduct = [
   {
     id: 15,
     name: "Kid5",
-    category: "kid",
+    category: "Kid",
     image: Kid5,
     newPrice: 50,
     oldPrice: 80,
@@ -159,7 +159,7 @@ let allProduct = [
   {
     id: 16,
     name: "Men6",
-    category: "men",
+    category: "Men",
     image: Men6,
     newPrice: 50,
     oldPrice: 80,
@@ -167,7 +167,7 @@ let allProduct = [
   {
     id: 17,
     name: "Women6",
-    category: "women",
+    category: "Women",
     image: Women6,
     newPrice: 50,
     oldPrice: 80,
@@ -175,7 +175,7 @@ let allProduct = [
   {
     id: 18,
     name: "Kid6",
-    category: "kid",
+    category: "Kid",
     image: Kid6,
     newPrice: 50,
     oldPrice: 80,
@@ -183,7 +183,7 @@ let allProduct = [
   {
     id: 19,
     name: "Men7",
-    category: "men",
+    category: "Men",
     image: Men7,
     newPrice: 50,
     oldPrice: 80,
@@ -191,7 +191,7 @@ let allProduct = [
   {
     id: 20,
     name: "Women7",
-    category: "women",
+    category: "Women",
     image: Women7,
     newPrice: 50,
     oldPrice: 80,
@@ -199,7 +199,7 @@ let allProduct = [
   {
     id: 21,
     name: "Kid7",
-    category: "kid",
+    category: "Kid",
     image: Kid7,
     newPrice: 50,
     oldPrice: 80,
@@ -207,7 +207,7 @@ let allProduct = [
   {
     id: 22,
     name: "Men8",
-    category: "men",
+    category: "Men",
     image: Men8,
     newPrice: 50,
     oldPrice: 80,
@@ -215,7 +215,7 @@ let allProduct = [
   {
     id: 23,
     name: "Women8",
-    category: "women",
+    category: "Women",
     image: Women8,
     newPrice: 50,
     oldPrice: 80,
@@ -223,7 +223,7 @@ let allProduct = [
   {
     id: 24,
     name: "Kid8",
-    category: "kid",
+    category: "Kid",
     image: Kid8,
     newPrice: 50,
     oldPrice: 80,
@@ -231,7 +231,7 @@ let allProduct = [
   {
     id: 25,
     name: "Men9",
-    category: "men",
+    category: "Men",
     image: Men9,
     newPrice: 50,
     oldPrice: 80,
@@ -239,7 +239,7 @@ let allProduct = [
   {
     id: 26,
     name: "Women9",
-    category: "women",
+    category: "Women",
     image: Women9,
     newPrice: 50,
     oldPrice: 80,
@@ -247,7 +247,7 @@ let allProduct = [
   {
     id: 27,
     name: "Kid9",
-    category: "kid",
+    category: "Kid",
     image: Kid9,
     newPrice: 50,
     oldPrice: 80,
@@ -255,7 +255,7 @@ let allProduct = [
   {
     id: 28,
     name: "Men10",
-    category: "men",
+    category: "Men",
     image: Men10,
     newPrice: 50,
     oldPrice: 80,
@@ -263,7 +263,7 @@ let allProduct = [
   {
     id: 29,
     name: "Women10",
-    category: "women",
+    category: "Women",
     image: Women10,
     newPrice: 50,
     oldPrice: 80,
@@ -271,7 +271,7 @@ let allProduct = [
   {
     id: 30,
     name: "Kid10",
-    category: "kid",
+    category: "Kid",
     image: Kid10,
     newPrice: 50,
     oldPrice: 80,
@@ -279,7 +279,7 @@ let allProduct = [
   {
     id: 31,
     name: "Men11",
-    category: "men",
+    category: "Men",
     image: Men11,
     newPrice: 50,
     oldPrice: 80,
@@ -287,7 +287,7 @@ let allProduct = [
   {
     id: 32,
     name: "Women11",
-    category: "women",
+    category: "Women",
     image: Women11,
     newPrice: 50,
     oldPrice: 80,
@@ -295,7 +295,7 @@ let allProduct = [
   {
     id: 33,
     name: "Kid11",
-    category: "kid",
+    category: "Kid",
     image: Kid11,
     newPrice: 50,
     oldPrice: 80,
@@ -303,7 +303,7 @@ let allProduct = [
   {
     id: 34,
     name: "Men12",
-    category: "men",
+    category: "Men",
     image: Men12,
     newPrice: 50,
     oldPrice: 80,
@@ -311,7 +311,7 @@ let allProduct = [
   {
     id: 35,
     name: "Women12",
-    category: "women",
+    category: "Women",
     image: Women12,
     newPrice: 50,
     oldPrice: 80,
@@ -319,7 +319,7 @@ let allProduct = [
   {
     id: 36,
     name: "Kid12",
-    category: "kid",
+    category: "Kid",
     image: Kid12,
     newPrice: 50,
     oldPrice: 80,

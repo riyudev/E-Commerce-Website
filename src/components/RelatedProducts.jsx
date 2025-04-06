@@ -6,7 +6,7 @@ function RelatedProducts() {
   return (
     <div className="flex items-center justify-center pt-20">
       <div className="w-[90%] place-items-center space-y-4">
-        <h3>Related Products</h3>
+        <h3>RELATED PRODUCTS</h3>
         <hr className="w-40 border-[3px] border-amber-400" />
         <div className="grid grid-cols-4 space-y-5 space-x-6">
           {newCollectionsData.map((item, i) => {
