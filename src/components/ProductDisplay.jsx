@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaStar, FaRegStar, FaStarHalf } from "react-icons/fa";
+import { ShopContext } from "../context/ShopContext";
 
 const ProductDisplay = (props) => {
   const { product } = props;
+  const { addToCart } = useContext(ShopContext);
+
   return (
     <div className="flex justify-center space-x-10 px-5">
       <div className="flex size-fit gap-4">
@@ -53,7 +56,10 @@ const ProductDisplay = (props) => {
             <div className="border-2 p-2 px-4">XL</div>
             <div className="border-2 p-2 px-4">XXL</div>
           </div>
-          <button className="bg-amber-400 p-3.5 px-4.5 hover:bg-amber-500">
+          <button
+            onClick={() => addToCart(product.id)}
+            className="bg-amber-400 p-3.5 px-4.5 hover:bg-amber-500"
+          >
             ADD TO CART
           </button>
           <div>
