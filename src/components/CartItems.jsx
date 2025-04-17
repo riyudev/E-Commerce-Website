@@ -3,8 +3,22 @@ import { ShopContext } from "../context/ShopContext";
 import { CiCircleRemove } from "react-icons/ci";
 
 function CartItems() {
-  const { allProduct, getTotalCartAmount, cartItems, removeFromCart } =
-    useContext(ShopContext);
+  const {
+    allProduct,
+    getTotalCartAmount,
+    cartItems,
+    removeFromCart,
+    addToCart,
+    removeOneFromCart,
+  } = useContext(ShopContext);
+
+  const handleIncrement = (id) => {
+    addToCart(id);
+  };
+
+  const handleDecrement = (id) => {
+    removeOneFromCart(id);
+  };
 
   return (
     <div className="pt-25">
@@ -32,9 +46,19 @@ function CartItems() {
                 />
                 <p className="place-self-center">{product.name}</p>
                 <p className="place-self-center">${product.newPrice}</p>
-                <div className="flex items-center place-self-center">
-                  <button className="rounded border px-2 py-1">
-                    {cartItems[product.id]}
+                <div className="flex items-center gap-2 place-self-center rounded border">
+                  <button
+                    className="cursor-pointer rounded border border-amber-500 px-2 py-1 active:bg-amber-500"
+                    onClick={() => handleDecrement(product.id)}
+                  >
+                    -
+                  </button>
+                  <p>{cartItems[product.id]}</p>
+                  <button
+                    className="cursor-pointer rounded border border-amber-500 px-2 py-1 active:bg-amber-500"
+                    onClick={() => handleIncrement(product.id)}
+                  >
+                    +
                   </button>
                 </div>
                 <p className="place-self-center">

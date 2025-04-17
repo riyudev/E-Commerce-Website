@@ -22,10 +22,17 @@ const ShopContextProvider = (props) => {
     console.log(cartItems);
   };
 
+  const removeOneFromCart = (itemId) => {
+    setCartItems((prev) => ({
+      ...prev,
+      [itemId]: prev[itemId] > 0 ? prev[itemId] - 1 : 0,
+    }));
+  };
+
   const removeFromCart = (itemId) => {
     setCartItems((prev) => ({
       ...prev,
-      [itemId]: prev[itemId] - 1,
+      [itemId]: 0,
     }));
   };
 
@@ -42,11 +49,23 @@ const ShopContextProvider = (props) => {
     return totalAmount;
   };
 
+  const getTotalCartItems = () => {
+    let totalItems = 0;
+    for (const item in cartItems) {
+      if (cartItems[item] !== 0) {
+        totalItems++;
+      }
+    }
+    return totalItems;
+  };
+
   const contextValue = {
     allProduct,
     getTotalCartAmount,
+    getTotalCartItems,
     cartItems,
     addToCart,
+    removeOneFromCart,
     removeFromCart,
   };
 

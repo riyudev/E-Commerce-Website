@@ -54,7 +54,7 @@ let allProduct = [
   },
   {
     id: 3,
-    name: "Kid1.",
+    name: "Kid1",
     category: "Kid",
     image: Kid1,
     newPrice: 50,

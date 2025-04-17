@@ -2,6 +2,7 @@ import React from "react";
 import Logo from "../assets/logo.png";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { NavLink } from "react-router-dom";
+import { ShopContext } from "../context/ShopContext";
 
 function Navbar() {
   const navLinks = [
@@ -10,6 +11,8 @@ function Navbar() {
     { path: "/womens", label: "Women" },
     { path: "/kids", label: "Kids" },
   ];
+
+  const { getTotalCartItems } = React.useContext(ShopContext);
 
   return (
     <nav className="fixed top-0 right-0 left-0 z-50 w-full border-b-2 bg-white">
@@ -48,7 +51,7 @@ function Navbar() {
           <NavLink to="/cart" className="relative cursor-pointer p-2">
             <MdOutlineShoppingCart className="mt-1 text-3xl hover:text-amber-500" />
             <p className="absolute top-0 ml-3 rounded-full bg-red-500/90 px-2 text-[12px] text-white">
-              9
+              {getTotalCartItems()}
             </p>
           </NavLink>
         </div>
