@@ -1,15 +1,20 @@
 import React, { useContext } from "react";
 import { ShopContext } from "../context/ShopContext";
 import { CiCircleRemove } from "react-icons/ci";
+import { IoIosCheckbox, IoIosCheckboxOutline } from "react-icons/io";
 
 function CartItems() {
   const {
-    allProduct,
+    getCartProducts,
     getTotalCartAmount,
     cartItems,
+    checkedItems,
     removeFromCart,
     addToCart,
     removeOneFromCart,
+    toggleItemCheck,
+    toggleAllChecks,
+    areAllItemsChecked,
   } = useContext(ShopContext);
 
   const handleIncrement = (id) => {
@@ -20,63 +25,91 @@ function CartItems() {
     removeOneFromCart(id);
   };
 
+  const handleCheckboxToggle = (id) => {
+    toggleItemCheck(id);
+  };
+
+  const handleSelectAllToggle = () => {
+    toggleAllChecks(!areAllItemsChecked());
+  };
+
+  const isAllChecked = areAllItemsChecked();
+  const cartProducts = getCartProducts();
+
   return (
     <div className="pt-25">
       <section>
-        <div className="grid grid-cols-6 items-center justify-center gap-4 px-5">
+        <div className="grid grid-cols-7 items-center justify-center gap-4 p-2 px-5">
+          <div className="flex items-center gap-1 place-self-center">
+            <div className="cursor-pointer" onClick={handleSelectAllToggle}>
+              {isAllChecked ? (
+                <IoIosCheckbox className="text-2xl text-amber-500" />
+              ) : (
+                <IoIosCheckboxOutline className="text-2xl" />
+              )}
+            </div>
+            <p className="text-sm">Select</p>
+          </div>
           <p className="place-self-center text-sm">Products</p>
           <p className="place-self-center text-sm">Title</p>
           <p className="place-self-center text-sm">Price</p>
           <p className="place-self-center text-sm">Quantity</p>
           <p className="place-self-center text-sm">Total</p>
-          <p className="place-self-center text-sm">Remove</p>
+          <p className="place-self-center text-sm">Actions</p>
         </div>
         <hr />
-        {allProduct.map((product) => {
-          if (cartItems[product.id] !== 0) {
-            return (
-              <div
-                key={product.id}
-                className="grid grid-cols-6 items-center justify-center gap-4 border-b px-5 py-4"
+        {cartProducts.map((product) => (
+          <div
+            key={product.id}
+            className={`grid grid-cols-7 items-center justify-center gap-4 border-b px-5 py-4 ${
+              checkedItems[product.id] ? "bg-amber-50" : ""
+            }`}
+          >
+            <div
+              className="cursor-pointer place-self-center"
+              onClick={() => handleCheckboxToggle(product.id)}
+            >
+              {checkedItems[product.id] ? (
+                <IoIosCheckbox className="text-2xl text-amber-500" />
+              ) : (
+                <IoIosCheckboxOutline className="text-2xl" />
+              )}
+            </div>
+            <img
+              src={product.image}
+              alt={product.name}
+              className="w-10 place-self-center object-cover"
+            />
+            <p className="place-self-center">{product.name}</p>
+            <p className="place-self-center">${product.newPrice}</p>
+            <div className="flex items-center gap-2 place-self-center rounded border">
+              <button
+                className="cursor-pointer rounded border border-amber-500 px-2 py-1 active:bg-amber-500"
+                onClick={() => handleDecrement(product.id)}
               >
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-10 place-self-center object-cover"
-                />
-                <p className="place-self-center">{product.name}</p>
-                <p className="place-self-center">${product.newPrice}</p>
-                <div className="flex items-center gap-2 place-self-center rounded border">
-                  <button
-                    className="cursor-pointer rounded border border-amber-500 px-2 py-1 active:bg-amber-500"
-                    onClick={() => handleDecrement(product.id)}
-                  >
-                    -
-                  </button>
-                  <p>{cartItems[product.id]}</p>
-                  <button
-                    className="cursor-pointer rounded border border-amber-500 px-2 py-1 active:bg-amber-500"
-                    onClick={() => handleIncrement(product.id)}
-                  >
-                    +
-                  </button>
-                </div>
-                <p className="place-self-center">
-                  ${cartItems[product.id] * product.newPrice}
-                </p>
-                <CiCircleRemove
-                  className="cursor-pointer place-self-center text-3xl text-red-500 hover:text-red-700"
-                  onClick={() => removeFromCart(product.id)}
-                />
-              </div>
-            );
-          }
-          return null;
-        })}
+                -
+              </button>
+              <p>{cartItems[product.id]}</p>
+              <button
+                className="cursor-pointer rounded border border-amber-500 px-2 py-1 active:bg-amber-500"
+                onClick={() => handleIncrement(product.id)}
+              >
+                +
+              </button>
+            </div>
+            <p className="place-self-center">
+              ${cartItems[product.id] * product.newPrice}
+            </p>
+            <CiCircleRemove
+              className="cursor-pointer place-self-center text-3xl text-red-500 hover:text-red-700"
+              onClick={() => removeFromCart(product.id)}
+            />
+          </div>
+        ))}
         <hr />
       </section>
 
-      <section className="flex justify-between px-[7%] pt-14">
+      <section className="sticky bottom-0 flex w-full justify-between border-t bg-white px-[7%] pt-8">
         <div className="space-y-8">
           <h3>cart total</h3>
 

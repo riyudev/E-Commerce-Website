@@ -3,9 +3,9 @@ import CartItems from "../components/CartItems";
 
 function Cart() {
   return (
-    <div>
+    <>
       <CartItems />
-    </div>
+    </>
   );
 }
 
