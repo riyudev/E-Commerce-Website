@@ -1,10 +1,21 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { FaStar, FaRegStar, FaStarHalf } from "react-icons/fa";
 import { ShopContext } from "../context/ShopContext";
 
 const ProductDisplay = (props) => {
   const { product } = props;
   const { addToCart } = useContext(ShopContext);
+  const [selectedSize, setSelectedSize] = useState("M");
+
+  const sizes = ["S", "M", "L", "XL", "XXL"];
+
+  const handleSizeSelect = (size) => {
+    setSelectedSize(size);
+  };
+
+  const handleAddToCart = () => {
+    addToCart(product.id, selectedSize);
+  };
 
   return (
     <div className="flex justify-center space-x-10 px-5">
@@ -50,15 +61,23 @@ const ProductDisplay = (props) => {
         <div className="space-y-6">
           <h5>Select Size</h5>
           <div className="flex space-x-4">
-            <div className="border-2 p-2 px-4">S</div>
-            <div className="border-2 p-2 px-4">M</div>
-            <div className="border-2 p-2 px-4">L</div>
-            <div className="border-2 p-2 px-4">XL</div>
-            <div className="border-2 p-2 px-4">XXL</div>
+            {sizes.map((size) => (
+              <div
+                key={size}
+                onClick={() => handleSizeSelect(size)}
+                className={`cursor-pointer border-2 p-2 px-4 ${
+                  selectedSize === size
+                    ? "border-amber-500 bg-amber-50 text-amber-500"
+                    : ""
+                }`}
+              >
+                {size}
+              </div>
+            ))}
           </div>
           <button
-            onClick={() => addToCart(product.id)}
-            className="bg-amber-400 p-3.5 px-4.5 hover:bg-amber-500"
+            onClick={handleAddToCart}
+            className="cursor-pointer bg-amber-400 p-3.5 px-4.5 hover:bg-amber-500"
           >
             ADD TO CART
           </button>

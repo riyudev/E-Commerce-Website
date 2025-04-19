@@ -5,7 +5,7 @@ import { IoIosCheckbox, IoIosCheckboxOutline } from "react-icons/io";
 
 function CartItems() {
   const {
-    getCartProducts,
+    getCartItemsWithSizes,
     getTotalCartAmount,
     cartItems,
     checkedItems,
@@ -17,12 +17,12 @@ function CartItems() {
     areAllItemsChecked,
   } = useContext(ShopContext);
 
-  const handleIncrement = (id) => {
-    addToCart(id);
+  const handleIncrement = (id, size) => {
+    addToCart(id, size);
   };
 
-  const handleDecrement = (id) => {
-    removeOneFromCart(id);
+  const handleDecrement = (id, size) => {
+    removeOneFromCart(id, size);
   };
 
   const handleCheckboxToggle = (id) => {
@@ -34,7 +34,7 @@ function CartItems() {
   };
 
   const isAllChecked = areAllItemsChecked();
-  const cartProducts = getCartProducts();
+  const cartProductsWithSizes = getCartItemsWithSizes();
 
   return (
     <div className="pt-25">
@@ -58,18 +58,18 @@ function CartItems() {
           <p className="place-self-center text-sm">Actions</p>
         </div>
         <hr />
-        {cartProducts.map((product) => (
+        {cartProductsWithSizes.map((product) => (
           <div
             key={product.id}
             className={`grid grid-cols-7 items-center justify-center gap-4 border-b px-5 py-4 ${
-              checkedItems[product.id] ? "bg-amber-50" : ""
+              checkedItems[product.productId] ? "bg-amber-50" : ""
             }`}
           >
             <div
               className="cursor-pointer place-self-center"
-              onClick={() => handleCheckboxToggle(product.id)}
+              onClick={() => handleCheckboxToggle(product.productId)}
             >
-              {checkedItems[product.id] ? (
+              {checkedItems[product.productId] ? (
                 <IoIosCheckbox className="text-2xl text-amber-500" />
               ) : (
                 <IoIosCheckboxOutline className="text-2xl" />
@@ -80,37 +80,39 @@ function CartItems() {
               alt={product.name}
               className="w-10 place-self-center object-cover"
             />
-            <p className="place-self-center">{product.name}</p>
+            <p className="place-self-center">
+              {product.name}, {product.size}
+            </p>
             <p className="place-self-center">${product.newPrice}</p>
             <div className="flex items-center gap-2 place-self-center rounded border">
               <button
                 className="cursor-pointer rounded border border-amber-500 px-2 py-1 active:bg-amber-500"
-                onClick={() => handleDecrement(product.id)}
+                onClick={() => handleDecrement(product.productId, product.size)}
               >
                 -
               </button>
-              <p>{cartItems[product.id]}</p>
+              <p>{product.quantity}</p>
               <button
                 className="cursor-pointer rounded border border-amber-500 px-2 py-1 active:bg-amber-500"
-                onClick={() => handleIncrement(product.id)}
+                onClick={() => handleIncrement(product.productId, product.size)}
               >
                 +
               </button>
             </div>
             <p className="place-self-center">
-              ${cartItems[product.id] * product.newPrice}
+              ${product.quantity * product.newPrice}
             </p>
             <CiCircleRemove
               className="cursor-pointer place-self-center text-3xl text-red-500 hover:text-red-700"
-              onClick={() => removeFromCart(product.id)}
+              onClick={() => removeFromCart(product.productId)}
             />
           </div>
         ))}
         <hr />
       </section>
 
-      <section className="sticky bottom-0 flex w-full justify-between border-t bg-white px-[7%] pt-8">
-        <div className="space-y-8">
+      <section className="sticky bottom-0 flex w-full justify-between border-t bg-white px-[7%] py-5">
+        <div className="space-y-5">
           <h3>cart total</h3>
 
           <div className="w-xl">
