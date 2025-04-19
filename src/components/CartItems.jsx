@@ -17,16 +17,16 @@ function CartItems() {
     areAllItemsChecked,
   } = useContext(ShopContext);
 
-  const handleIncrement = (id, size) => {
-    addToCart(id, size);
+  const handleIncrement = (productId, size) => {
+    addToCart(productId, size);
   };
 
-  const handleDecrement = (id, size) => {
-    removeOneFromCart(id, size);
+  const handleDecrement = (cartItemId) => {
+    removeOneFromCart(cartItemId);
   };
 
-  const handleCheckboxToggle = (id) => {
-    toggleItemCheck(id);
+  const handleCheckboxToggle = (cartItemId) => {
+    toggleItemCheck(cartItemId);
   };
 
   const handleSelectAllToggle = () => {
@@ -60,16 +60,16 @@ function CartItems() {
         <hr />
         {cartProductsWithSizes.map((product) => (
           <div
-            key={product.id}
+            key={product.cartItemId}
             className={`grid grid-cols-7 items-center justify-center gap-4 border-b px-5 py-4 ${
-              checkedItems[product.productId] ? "bg-amber-50" : ""
+              checkedItems[product.cartItemId] ? "bg-amber-50" : ""
             }`}
           >
             <div
               className="cursor-pointer place-self-center"
-              onClick={() => handleCheckboxToggle(product.productId)}
+              onClick={() => handleCheckboxToggle(product.cartItemId)}
             >
-              {checkedItems[product.productId] ? (
+              {checkedItems[product.cartItemId] ? (
                 <IoIosCheckbox className="text-2xl text-amber-500" />
               ) : (
                 <IoIosCheckboxOutline className="text-2xl" />
@@ -87,7 +87,7 @@ function CartItems() {
             <div className="flex items-center gap-2 place-self-center rounded border">
               <button
                 className="cursor-pointer rounded border border-amber-500 px-2 py-1 active:bg-amber-500"
-                onClick={() => handleDecrement(product.productId, product.size)}
+                onClick={() => handleDecrement(product.cartItemId)}
               >
                 -
               </button>
@@ -104,14 +104,14 @@ function CartItems() {
             </p>
             <CiCircleRemove
               className="cursor-pointer place-self-center text-3xl text-red-500 hover:text-red-700"
-              onClick={() => removeFromCart(product.productId)}
+              onClick={() => removeFromCart(product.cartItemId)}
             />
           </div>
         ))}
         <hr />
       </section>
 
-      <section className="sticky bottom-0 flex w-full justify-between border-t bg-white px-[7%] py-5">
+      <section className="sticky bottom-0 flex w-full justify-between border-t bg-white px-[7%] pt-8">
         <div className="space-y-5">
           <h3>cart total</h3>
 

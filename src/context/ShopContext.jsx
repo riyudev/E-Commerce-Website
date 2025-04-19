@@ -5,17 +5,11 @@ export const ShopContext = createContext(null);
 
 const getDefaultCart = () => {
   let cart = {};
-  for (let i = 1; i < allProduct.length + 1; i++) {
-    cart[i] = {};
-  }
   return cart;
 };
 
 const getDefaultCheckedItems = () => {
   let checkedItems = {};
-  for (let i = 1; i < allProduct.length + 1; i++) {
-    checkedItems[i] = true;
-  }
   return checkedItems;
 };
 
@@ -24,85 +18,110 @@ const ShopContextProvider = (props) => {
   const [checkedItems, setCheckedItems] = useState(getDefaultCheckedItems());
   const [cartOrder, setCartOrder] = useState([]);
 
+  const generateCartItemId = (productId, size) => {
+    return `${productId}-${size}`;
+  };
+
   const addToCart = (itemId, size = "M") => {
-    let alreadyInCart = getItemTotalQuantity(itemId) > 0;
+    const cartItemId = generateCartItemId(itemId, size);
+    const alreadyInCart = cartOrder.includes(cartItemId);
 
     setCartItems((prev) => {
       const updatedCart = { ...prev };
 
-      if (!updatedCart[itemId][size]) {
-        updatedCart[itemId][size] = 0;
+      if (!updatedCart[cartItemId]) {
+        updatedCart[cartItemId] = {
+          productId: itemId,
+          size: size,
+          quantity: 0,
+        };
       }
 
-      updatedCart[itemId][size] += 1;
+      updatedCart[cartItemId].quantity++;
       return updatedCart;
     });
 
     if (!alreadyInCart) {
       setCartOrder((prevOrder) => {
-        const newOrder = [...prevOrder];
-        const index = newOrder.indexOf(itemId);
-        if (index > -1) newOrder.splice(index, 1);
-        return [itemId, ...newOrder];
+        return [cartItemId, ...prevOrder];
       });
+
+      setCheckedItems((prev) => ({
+        ...prev,
+        [cartItemId]: true,
+      }));
     }
   };
 
-  const getItemTotalQuantity = (itemId) => {
+  const getItemTotalQuantity = (productId) => {
     let total = 0;
-    const sizeObj = cartItems[itemId];
 
-    if (sizeObj) {
-      Object.values(sizeObj).forEach((qty) => {
-        total += qty;
-      });
-    }
+    Object.values(cartItems).forEach((item) => {
+      if (item.productId === productId) {
+        total += item.quantity;
+      }
+    });
 
     return total;
   };
 
-  const removeOneFromCart = (itemId, size) => {
+  const removeOneFromCart = (cartItemId) => {
     setCartItems((prev) => {
       const updatedCart = { ...prev };
 
-      if (updatedCart[itemId][size] && updatedCart[itemId][size] > 0) {
-        updatedCart[itemId][size] = updatedCart[itemId][size] - 1;
+      if (updatedCart[cartItemId] && updatedCart[cartItemId].quantity > 0) {
+        updatedCart[cartItemId].quantity--;
+
+        if (updatedCart[cartItemId].quantity === 0) {
+          delete updatedCart[cartItemId];
+          setCartOrder((prevOrder) =>
+            prevOrder.filter((id) => id !== cartItemId),
+          );
+
+          setCheckedItems((prev) => {
+            const updated = { ...prev };
+            delete updated[cartItemId];
+            return updated;
+          });
+        }
       }
 
       return updatedCart;
     });
-
-    if (getItemTotalQuantity(itemId) === 1) {
-      setCartOrder((prevOrder) => prevOrder.filter((id) => id !== itemId));
-    }
   };
 
-  const removeFromCart = (itemId) => {
+  const removeFromCart = (cartItemId) => {
     setCartItems((prev) => {
       const updatedCart = { ...prev };
-      updatedCart[itemId] = {};
+      delete updatedCart[cartItemId];
       return updatedCart;
     });
 
-    setCartOrder((prevOrder) => prevOrder.filter((id) => id !== itemId));
+    setCartOrder((prevOrder) => prevOrder.filter((id) => id !== cartItemId));
+
+    setCheckedItems((prev) => {
+      const updated = { ...prev };
+      delete updated[cartItemId];
+      return updated;
+    });
   };
 
-  const toggleItemCheck = (itemId) => {
+  const toggleItemCheck = (cartItemId) => {
     setCheckedItems((prev) => ({
       ...prev,
-      [itemId]: !prev[itemId],
+      [cartItemId]: !prev[cartItemId],
     }));
   };
 
   const toggleAllChecks = (checkState) => {
-    let updatedChecks = {};
-    for (const item in cartItems) {
-      if (getItemTotalQuantity(item) !== 0) {
-        updatedChecks[item] = checkState;
-      } else {
-        updatedChecks[item] = checkedItems[item];
+    const updatedChecks = {};
+
+    cartOrder.forEach((cartItemId) => {
+      if (cartItems[cartItemId]) {
+        updatedChecks[cartItemId] = checkState;
       }
-    }
+    });
+
     setCheckedItems((prev) => ({
       ...prev,
       ...updatedChecks,
@@ -110,8 +129,10 @@ const ShopContextProvider = (props) => {
   };
 
   const areAllItemsChecked = () => {
-    for (const item in cartItems) {
-      if (getItemTotalQuantity(item) !== 0 && !checkedItems[item]) {
+    if (cartOrder.length === 0) return false;
+
+    for (const cartItemId of cartOrder) {
+      if (cartItems[cartItemId] && !checkedItems[cartItemId]) {
         return false;
       }
     }
@@ -120,68 +141,58 @@ const ShopContextProvider = (props) => {
 
   const getCartProducts = () => {
     return cartOrder
-      .filter((id) => getItemTotalQuantity(id) > 0)
-      .map((id) => {
-        const product = allProduct.find((product) => product.id === Number(id));
-        const sizes = Object.keys(cartItems[id]).filter(
-          (size) => cartItems[id][size] > 0,
+      .filter((cartItemId) => cartItems[cartItemId])
+      .map((cartItemId) => {
+        const { productId, size, quantity } = cartItems[cartItemId];
+        const product = allProduct.find(
+          (product) => product.id === Number(productId),
         );
-        return { ...product, sizes };
+        return { ...product, size, quantity, cartItemId };
       });
   };
 
   const getTotalCartAmount = () => {
     let totalAmount = 0;
-    for (const itemId in cartItems) {
-      if (checkedItems[itemId]) {
-        const sizeObj = cartItems[itemId];
-        let itemInfo = allProduct.find(
-          (product) => product.id === Number(itemId),
+
+    cartOrder.forEach((cartItemId) => {
+      if (cartItems[cartItemId] && checkedItems[cartItemId]) {
+        const { productId, quantity } = cartItems[cartItemId];
+        const itemInfo = allProduct.find(
+          (product) => product.id === Number(productId),
         );
 
         if (itemInfo) {
-          Object.entries(sizeObj).forEach(([size, quantity]) => {
-            totalAmount += quantity * itemInfo.newPrice;
-          });
+          totalAmount += quantity * itemInfo.newPrice;
         }
       }
-    }
+    });
+
     return totalAmount;
   };
 
   const getTotalCartItems = () => {
-    let totalItems = 0;
-    for (const itemId in cartItems) {
-      const sizeObj = cartItems[itemId];
-      totalItems += Object.keys(sizeObj).length;
-    }
-    return totalItems;
+    return cartOrder.length;
   };
 
   const getCartItemsWithSizes = () => {
-    const result = [];
-
-    cartOrder
-      .filter((id) => getItemTotalQuantity(id) > 0)
-      .forEach((id) => {
-        const product = allProduct.find((p) => p.id === Number(id));
+    return cartOrder
+      .filter((cartItemId) => cartItems[cartItemId])
+      .map((cartItemId) => {
+        const { productId, size, quantity } = cartItems[cartItemId];
+        const product = allProduct.find((p) => p.id === Number(productId));
 
         if (product) {
-          Object.entries(cartItems[id]).forEach(([size, quantity]) => {
-            if (quantity > 0) {
-              result.push({
-                ...product,
-                size,
-                quantity,
-                id: `${id}-${size}`,
-                productId: id,
-              });
-            }
-          });
+          return {
+            ...product,
+            size,
+            quantity,
+            cartItemId,
+            productId,
+          };
         }
-      });
-
-    return result;
+        return null;
+      })
+      .filter(Boolean);
   };
 
   const contextValue = {
@@ -199,6 +210,7 @@ const ShopContextProvider = (props) => {
     toggleAllChecks,
     areAllItemsChecked,
     getItemTotalQuantity,
+    generateCartItemId,
   };
 
   return (
