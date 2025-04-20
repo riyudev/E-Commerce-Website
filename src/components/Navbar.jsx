@@ -84,9 +84,9 @@ function Navbar() {
             </NavLink>
 
             {isOpen ? (
-              <TiArrowSortedDown onClick={toggleMenu} className="size-10" />
-            ) : (
               <TiArrowSortedUp onClick={toggleMenu} className="size-10" />
+            ) : (
+              <TiArrowSortedDown onClick={toggleMenu} className="size-10" />
             )}
           </div>
         </div>
