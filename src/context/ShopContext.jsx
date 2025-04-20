@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useRef } from "react";
 import allProduct from "../assets/AllProducts.js";
 
 export const ShopContext = createContext(null);
@@ -17,6 +17,7 @@ const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefaultCart());
   const [checkedItems, setCheckedItems] = useState(getDefaultCheckedItems());
   const [cartOrder, setCartOrder] = useState([]);
+  const actionLockRef = useRef({});
 
   const generateCartItemId = (productId, size) => {
     return `${productId}-${size}`;
@@ -24,12 +25,17 @@ const ShopContextProvider = (props) => {
 
   const addToCart = (itemId, size = "M") => {
     const cartItemId = generateCartItemId(itemId, size);
-    const alreadyInCart = cartOrder.includes(cartItemId);
+    console.log("actionLockRef:", actionLockRef);
+
+    if (actionLockRef.current[cartItemId]) return;
+    actionLockRef.current[cartItemId] = true;
 
     setCartItems((prev) => {
       const updatedCart = { ...prev };
 
-      if (!updatedCart[cartItemId]) {
+      const isNewItem = !updatedCart[cartItemId];
+
+      if (isNewItem) {
         updatedCart[cartItemId] = {
           productId: itemId,
           size: size,
@@ -38,19 +44,18 @@ const ShopContextProvider = (props) => {
       }
 
       updatedCart[cartItemId].quantity++;
+
+      // Only push to cartOrder if it's a new item
+      if (isNewItem) {
+        setCartOrder((prevOrder) => [...prevOrder, cartItemId]);
+      }
+
       return updatedCart;
     });
 
-    if (!alreadyInCart) {
-      setCartOrder((prevOrder) => {
-        return [cartItemId, ...prevOrder];
-      });
-
-      setCheckedItems((prev) => ({
-        ...prev,
-        [cartItemId]: true,
-      }));
-    }
+    setTimeout(() => {
+      actionLockRef.current[cartItemId] = false;
+    }, 100);
   };
 
   const getItemTotalQuantity = (productId) => {
@@ -66,28 +71,27 @@ const ShopContextProvider = (props) => {
   };
 
   const removeOneFromCart = (cartItemId) => {
+    if (actionLockRef.current[cartItemId]) return;
+    actionLockRef.current[cartItemId] = true;
+
     setCartItems((prev) => {
       const updatedCart = { ...prev };
 
-      if (updatedCart[cartItemId] && updatedCart[cartItemId].quantity > 0) {
+      if (updatedCart[cartItemId]) {
         updatedCart[cartItemId].quantity--;
 
-        if (updatedCart[cartItemId].quantity === 0) {
+        if (updatedCart[cartItemId].quantity <= 0) {
           delete updatedCart[cartItemId];
-          setCartOrder((prevOrder) =>
-            prevOrder.filter((id) => id !== cartItemId),
-          );
-
-          setCheckedItems((prev) => {
-            const updated = { ...prev };
-            delete updated[cartItemId];
-            return updated;
-          });
         }
       }
 
       return updatedCart;
     });
+
+    // Release the lock
+    setTimeout(() => {
+      actionLockRef.current[cartItemId] = false;
+    }, 100);
   };
 
   const removeFromCart = (cartItemId) => {
