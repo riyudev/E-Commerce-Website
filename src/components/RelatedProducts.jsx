@@ -4,12 +4,13 @@ import { ShopContext } from "../context/ShopContext";
 
 function RelatedProducts({ category, productId }) {
   const { allProduct } = useContext(ShopContext);
-  
-  // Filter products by the same category (case-insensitive) and exclude the current product
+
   const relatedProducts = allProduct
-    .filter(product => 
-      product.category === category.charAt(0).toUpperCase() + category.slice(1) && 
-      product.id !== Number(productId)
+    .filter(
+      (product) =>
+        product.category ===
+          category.charAt(0).toUpperCase() + category.slice(1) &&
+        product.id !== Number(productId),
     )
     .slice(0, 8); // Show only 8 related products
 

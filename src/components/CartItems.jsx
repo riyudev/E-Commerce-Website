@@ -111,7 +111,7 @@ function CartItems() {
         <hr />
       </section>
 
-      <section className="sticky bottom-0 flex w-full justify-between border-t bg-white px-[7%] pt-8">
+      <section className="sticky bottom-0 flex w-full justify-between border-t bg-white px-[7%] py-5">
         <div className="space-y-5">
           <h3>cart total</h3>
 

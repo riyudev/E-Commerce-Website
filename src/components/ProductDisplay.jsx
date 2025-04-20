@@ -77,7 +77,7 @@ const ProductDisplay = (props) => {
           </div>
           <button
             onClick={handleAddToCart}
-            className="cursor-pointer bg-amber-400 p-3.5 px-4.5 hover:bg-amber-500"
+            className="cursor-pointer bg-amber-400 p-3.5 px-4.5 active:bg-amber-500"
           >
             ADD TO CART
           </button>
