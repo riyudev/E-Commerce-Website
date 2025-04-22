@@ -82,16 +82,28 @@ function Navbar() {
                 {getTotalCartItems()}
               </p>
             </NavLink>
-
-            {isOpen ? (
-              <TiArrowSortedUp onClick={toggleMenu} className="size-10" />
-            ) : (
-              <TiArrowSortedDown onClick={toggleMenu} className="size-10" />
-            )}
+            <div className="transition-transform duration-300 ease-in-out">
+              {isOpen ? (
+                <TiArrowSortedUp
+                  onClick={toggleMenu}
+                  className="size-10 rotate-0 transform transition-transform duration-300"
+                />
+              ) : (
+                <TiArrowSortedDown
+                  onClick={toggleMenu}
+                  className="size-10 rotate-0 transform transition-transform duration-300"
+                />
+              )}
+            </div>
           </div>
         </div>
-        {isOpen && (
-          <div className="w-full border-t bg-white md:hidden">
+
+        <div
+          className={`overflow-hidden transition-all duration-300 ease-in-out ${
+            isOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="laptop:hidden w-full bg-white pt-2">
             <ul className="flex flex-col items-center justify-center px-4 pt-2 pb-4">
               {navLinks.map((link) => (
                 <NavLink
@@ -118,7 +130,7 @@ function Navbar() {
               </button>
             </NavLink>
           </div>
-        )}
+        </div>
       </nav>
     </>
   );
