@@ -8,7 +8,7 @@ function NewCollections() {
       <div className="w-[90%] place-items-center space-y-4">
         <h3>NEW COLLECTIONS</h3>
         <hr className="w-40 border-[3px] border-amber-400" />
-        <div className="grid grid-cols-4 space-y-5 space-x-6">
+        <div className="laptop:grid-cols-4 grid grid-cols-2 space-y-5 space-x-6">
           {newCollectionsData.map((item, i) => {
             return (
               <Item
