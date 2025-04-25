@@ -90,15 +90,13 @@ function Navbar() {
         ref={menuRef}
         className="laptop:hidden fixed top-0 right-0 left-0 z-50 w-full flex-col border-b-2 bg-white p-4"
       >
-        <div className="mx-auto flex w-[90%] items-center justify-between">
-          <div className="flex gap-x-2">
-            <a href="/" className="flex gap-x-2">
-              <div onClick={() => setIsOpen(false)} className="max-w-12">
-                <img src={Logo} alt="" />
-              </div>
-              <h3 className="font-robotoBold">SHOPEE</h3>
-            </a>
-          </div>
+        <div className="flex items-center justify-between">
+          <a href="/" className="flex items-center justify-center gap-x-2">
+            <div onClick={() => setIsOpen(false)} className="max-w-12">
+              <img src={Logo} alt="" />
+            </div>
+            <h3 className="font-robotoBold">SHOPEE</h3>
+          </a>
           <div className="flex items-center">
             <NavLink to="/cart" className="relative cursor-pointer p-2">
               <MdOutlineShoppingCart
