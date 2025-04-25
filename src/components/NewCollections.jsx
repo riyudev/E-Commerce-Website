@@ -5,10 +5,10 @@ import newCollectionsData from "../assets/NewCollectionsData.js";
 function NewCollections() {
   return (
     <div className="flex items-center justify-center pt-20">
-      <div className="w-[90%] place-items-center space-y-4">
+      <div className="laptop:w-[90%] w-[95%] place-items-center space-y-4">
         <h3>NEW COLLECTIONS</h3>
         <hr className="w-40 border-[3px] border-amber-400" />
-        <div className="laptop:grid-cols-4 grid grid-cols-2 space-y-5 space-x-6">
+        <div className="laptop:grid-cols-4 tablet:gap-x-6 grid w-auto grid-cols-2 gap-x-3">
           {newCollectionsData.map((item, i) => {
             return (
               <Item
