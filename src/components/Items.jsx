@@ -1,10 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const Items = (props) => {
+  const params = useParams();
+  const currentCategory = params.category || props.category?.toLowerCase();
+
   return (
     <div className="tablet:w-52 laptop:max-w-[300px] laptop:w-full w-fit space-y-3 pt-5">
-      <Link to={`/product/${props.id}`}>
+      <Link to={`/${currentCategory}/product/${props.id}`}>
         <img
           src={props.image}
           alt=""

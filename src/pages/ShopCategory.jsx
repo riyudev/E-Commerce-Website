@@ -6,6 +6,8 @@ import { IoMdArrowDropdown } from "react-icons/io";
 const ShopCategory = (props) => {
   const { allProduct } = useContext(ShopContext);
 
+  const categoryLower = props.category.toLowerCase();
+
   return (
     <div className="place-items-center">
       <div className="mt-24 mb-10">
@@ -35,6 +37,7 @@ const ShopCategory = (props) => {
                   image={item.image}
                   newPrice={item.newPrice}
                   oldPrice={item.oldPrice}
+                  category={categoryLower}
                 />
               );
             } else {
