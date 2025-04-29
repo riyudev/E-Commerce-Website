@@ -10,23 +10,23 @@ const ShopCategory = (props) => {
 
   return (
     <div className="place-items-center">
-      <div className="mt-24 mb-10">
+      <div className="laptop:mt-24 mt-[83px] mb-10">
         <img src={props.banner} alt="" />
       </div>
 
-      <div className="mb-24">
+      <div className="laptop:mb-24 mb-16 px-3">
         <div className="flex items-center justify-between">
-          <p>
+          <p className="laptop:text-lg text-sm">
             <span className="font-sfproSemiBold">Showing 1-12</span> out of 36
             products
           </p>
 
-          <button className="flex items-center rounded-full border-2 p-2 px-4">
+          <button className="laptop:text-lg flex items-center rounded-full border-2 p-2 px-4 text-sm text-nowrap">
             Sort by <IoMdArrowDropdown />
           </button>
         </div>
 
-        <div className="grid grid-cols-4 space-x-6">
+        <div className="laptop:grid-cols-4 laptop:space-x-6 grid grid-cols-2 gap-x-3">
           {allProduct.map((item, i) => {
             if (props.category === item.category) {
               return (
@@ -47,7 +47,7 @@ const ShopCategory = (props) => {
         </div>
       </div>
 
-      <button className="rounded-full bg-amber-400 px-12 py-4 hover:bg-amber-500">
+      <button className="laptop:mb-0 mb-16 rounded-full bg-amber-400 px-12 py-4 hover:bg-amber-500">
         Explore More
       </button>
     </div>
