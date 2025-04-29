@@ -48,6 +48,6 @@
   button,
   input,
   p {
-    @apply font-sfproRegular text-lg leading-6;
+    @apply font-sfproRegular laptop:leading-6 text-lg;
   }
 }
