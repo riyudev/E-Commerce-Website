@@ -6,13 +6,9 @@ const Items = (props) => {
   const currentCategory = params.category || props.category?.toLowerCase();
 
   return (
-    <div className="tablet:w-52 laptop:max-w-[300px] laptop:w-full w-fit space-y-3 pt-5">
+    <div className="tablet:w-40 laptop:max-w-[300px] laptop:w-full w-fit space-y-3 pt-5">
       <Link to={`/${currentCategory}/product/${props.id}`}>
-        <img
-          src={props.image}
-          alt=""
-          className="laptop:w-[400px] tablet:w-52"
-        />
+        <img src={props.image} alt="" className="laptop:w-[400px] w-40" />
       </Link>
       <div className="px-2">
         <p className="laptop:text-lg text-sm text-wrap">{props.name}</p>
