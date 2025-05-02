@@ -19,15 +19,21 @@ const ProductDisplay = (props) => {
 
   return (
     <div className="flex justify-center space-x-10 px-5">
-      <div className="flex size-fit gap-4">
-        <div className="flex flex-col justify-between">
-          <img src={product.image} alt="" className="w-[105px]" />
-          <img src={product.image} alt="" className="w-[105px]" />
-          <img src={product.image} alt="" className="w-[105px]" />
-          <img src={product.image} alt="" className="w-[105px]" />
+      <div className="grid h-[500px] max-w-[424px] grid-flow-col grid-rows-4 gap-4">
+        <div className="w-full">
+          <img src={product.image} alt="" className="h-full w-full" />
         </div>
-        <div className="w-fit">
-          <img src={product.image} alt="" className="w-3xl object-cover" />
+        <div className="w-full">
+          <img src={product.image} alt="" className="h-full w-full" />
+        </div>
+        <div className="w-full">
+          <img src={product.image} alt="" className="h-full w-full" />
+        </div>
+        <div className="w-full">
+          <img src={product.image} alt="" className="h-full w-full" />
+        </div>
+        <div className="col-span-4 row-span-4">
+          <img src={product.image} alt="" className="h-full w-full" />
         </div>
       </div>
 
