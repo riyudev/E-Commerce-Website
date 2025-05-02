@@ -21,11 +21,9 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-300, currentColor);
+    border-color: #d1d5db;
   }
-}
 
-@layer base {
   h1 {
     @apply laptop:text-7xl font-robotoSemiBold text-5xl;
   }
